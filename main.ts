@@ -1,5 +1,4 @@
-import { App, Editor, WorkspaceLeaf, MarkdownView, Modal, Notice, PluginSettingTab, Setting } from 'obsidian';
-import { Plugin } from 'obsidian';
+import { Plugin, App, Editor, WorkspaceLeaf, MarkdownView, Modal, Notice, PluginSettingTab, Setting } from 'obsidian';
 
 interface VimToggleSettings {
 	notify: boolean;
