@@ -1,8 +1,6 @@
 import { App, Editor, WorkspaceLeaf, MarkdownView, Modal, Notice, Plugin, PluginSettingTab, Setting } from 'obsidian';
 import { MarkdownView, Notice, Plugin, WorkspaceLeaf } from 'obsidian';
 
-// Remember to rename these classes and interfaces!
-
 interface VimToggleSettings {
 	notify: boolean;
 }
@@ -34,8 +32,9 @@ export default class VimToggle extends Plugin {
 							new Notice("Vim mode toggled", 2000);
 						}
 					}
-		});
-	
+				});
+		}
+	});
 
 
 		// If the plugin hooks up any global DOM events (on parts of the app that doesn't belong to this plugin)
