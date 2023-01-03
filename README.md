@@ -1,6 +1,6 @@
 ---
 created: 2023-01-02T18:29:52-06:00
-updated: 2023-01-03T06:32:29-06:00
+updated: 2023-01-03T06:37:07-06:00
 ---
 # Vim Toggle Plugin Obsidian
 made with 🤍 by Conner Ohnesorge
@@ -45,8 +45,8 @@ kofi: conneroisu
 # Use Case
 Writting inside of obsidian canvas mode can be alittle tedious using vim mode cause of the constant inserting, this plugin allows for the user to evade these difficulties by switching to regular typing from vim mode temporarily.  
 # Contributions
-| Conner Ohnesorge            |
-| --------------------------- |
-| ![[prof_pic.jpg]]           |
+| Conner Ohnesorge |
+| ---------------- |
+|                  |
 | github username: conneroisu |
 | email: conneroisu@outlook.com                            |
