@@ -1,96 +1,44 @@
-# Obsidian Sample Plugin
+---
+created: 2023-01-02T18:29:52-06:00
+updated: 2023-01-02T20:09:05-06:00
+---
+# Vim Toggle Plugin Obsidian
+made with 🤍 by Conner Ohnesorge
+>> Toggle the state of Vim inside of Obsidian, in response to Obsidian Canvas Core Plugin Functionality.
 
-This is a sample plugin for Obsidian (https://obsidian.md).
+Inspired by the great potential within the new Canvas Plugin has prompted me to make a small plugin to toggle the state of use of the vim editor in obsidian.
+# The Basics
+This plugin is a simple plugin that allows for the toggling of vim mode in Obsidian with a command configurable to a hotkey. You can also turn off or on notifications for the plugin.  That pretty much it for basic functionality.
 
-This project uses Typescript to provide type checking and documentation.
-The repo depends on the latest plugin API (obsidian.d.ts) in Typescript Definition format, which contains TSDoc comments describing what it does.
+> [!important]+ Main Offerings
+>- Toggle Vim mode
+>- Optional Notification when toggling
+>- Community Avaliability
+# Usage
+Usage for this plugin is done through a settings tab accessible boolean variable and a command to run that toggles and untoggles vim inside of Obsidian. The command can be bound to a hotkey for quicker and more efficient use. 
 
-**Note:** The Obsidian API is still in early alpha and is subject to change at any time!
+To access the plugin settings, click on the settings cog in the top right corner of Obsidian or use a hotkey <kbd>Ctrl<kbd>+</kbd>,</kbd>From there, find the Vim Mode setting and toggle it to "On". This will enable Vim Toggle within the current instance of obsidian. 
 
-This sample plugin demonstrates some of the basic functionality the plugin API can do.
-- Changes the default font color to red using `styles.css`.
-- Adds a ribbon icon, which shows a Notice when clicked.
-- Adds a command "Open Sample Modal" which opens a Modal.
-- Adds a plugin setting tab to the settings page.
-- Registers a global click event and output 'click' to the console.
-- Registers a global interval which logs 'setInterval' to the console.
 
-## First time developing plugins?
+## Basic Usage
+Once installed, you can toggle vim mode on and off with a command. You can configure this command to a hotkey of your choice in the settings. You can also turn off or on notifications for when vim mode is turned on or off. 
+### Normal installation
+To install this plugin normally, you can navigate within the obsidian app to the community plugins to view and install this plugin without even exiting the app! Hopefully you can find some use for it yourself!
 
-Quick starting guide for new plugin devs:
+### Manual Installation
+To install this plugin manually, you'll need to download the source code from the [GitHub repository](https://github.com/nkomarn/obsidian-vim-mode) and place it in the `plugins` folder in your Obsidian data directory. Once that is done, restart Obsidian and you should be good to go. 
 
-- Check if [someone already developed a plugin for what you want](https://obsidian.md/plugins)! There might be an existing plugin similar enough that you can partner up with.
-- Make a copy of this repo as a template with the "Use this template" button (login to GitHub if you don't see it).
-- Clone your repo to a local development folder. For convenience, you can place this folder in your `.obsidian/plugins/your-plugin-name` folder.
-- Install NodeJS, then run `npm i` in the command line under your repo folder.
-- Run `npm run dev` to compile your plugin from `main.ts` to `main.js`.
-- Make changes to `main.ts` (or create new `.ts` files). Those changes should be automatically compiled into `main.js`.
-- Reload Obsidian to load the new version of your plugin.
-- Enable plugin in settings window.
-- For updates to the Obsidian API run `npm update` in the command line under your repo folder.
+## Support 
 
-## Releasing new releases
+If you have any questions or problems with this plugin, you can reach out through a github issue regarding issues, updates, features, and bug reports.  We also have a support page that includes information about the plugin and how to use it within the wikipedia part of github.
 
-- Update your `manifest.json` with your new version number, such as `1.0.1`, and the minimum Obsidian version required for your latest release.
-- Update your `versions.json` file with `"new-plugin-version": "minimum-obsidian-version"` so older versions of Obsidian can download an older version of your plugin that's compatible.
-- Create new GitHub release using your new version number as the "Tag version". Use the exact version number, don't include a prefix `v`. See here for an example: https://github.com/obsidianmd/obsidian-sample-plugin/releases
-- Upload the files `manifest.json`, `main.js`, `styles.css` as binary attachments. Note: The manifest.json file must be in two places, first the root path of your repository and also in the release.
-- Publish the release.
+This project uses Typescript to provide type checking and documentation. The repo depends on the latest plugin API (obsidian.d.ts) in Typescript Definition format, which contains TSDoc comments describing what it does.
 
-> You can simplify the version bump process by running `npm version patch`, `npm version minor` or `npm version major` after updating `minAppVersion` manually in `manifest.json`.
-> The command will bump version in `manifest.json` and `package.json`, and add the entry for the new version to `versions.json`
-
-## Adding your plugin to the community plugin list
-
-- Check https://github.com/obsidianmd/obsidian-releases/blob/master/plugin-review.md
-- Publish an initial version.
-- Make sure you have a `README.md` file in the root of your repo.
-- Make a pull request at https://github.com/obsidianmd/obsidian-releases to add your plugin.
-
-## How to use
-
-- Clone this repo.
-- `npm i` or `yarn` to install dependencies
-- `npm run dev` to start compilation in watch mode.
-
-## Manually installing the plugin
-
-- Copy over `main.js`, `styles.css`, `manifest.json` to your vault `VaultFolder/.obsidian/plugins/your-plugin-id/`.
-
-## Improve code quality with eslint (optional)
-- [ESLint](https://eslint.org/) is a tool that analyzes your code to quickly find problems. You can run ESLint against your plugin to find common bugs and ways to improve your code. 
-- To use eslint with this project, make sure to install eslint from terminal:
-  - `npm install -g eslint`
-- To use eslint to analyze this project use this command:
-  - `eslint main.ts`
-  - eslint will then create a report with suggestions for code improvement by file and line number.
-- If your source code is in a folder, such as `src`, you can use eslint with this command to analyze all files in that folder:
-  - `eslint .\src\`
-
-## Funding URL
-
-You can include funding URLs where people who use your plugin can financially support it.
-
-The simple way is to set the `fundingUrl` field to your link in your `manifest.json` file:
-
-```json
-{
-    "fundingUrl": "https://buymeacoffee.com"
-}
-```
-
-If you have multiple URLs, you can also do:
-
-```json
-{
-    "fundingUrl": {
-        "Buy Me a Coffee": "https://buymeacoffee.com",
-        "GitHub Sponsor": "https://github.com/sponsors",
-        "Patreon": "https://www.patreon.com/"
-    }
-}
-```
-
-## API Documentation
-
-See https://github.com/obsidianmd/obsidian-api
+You can download the plugin when avaliable within the community plugins inside of obsidain. 
+# Use Case
+Writting inside of obsidian canvas mode can be alittle tedious using vim mode cause of the constant inserting, this plugin allows for the user to evade these difficulties by switching to regular typing from vim mode temporarily.  
+# Contributions
+| Conner Ohnesorge            |
+| --------------------------- |
+|                             |
+| github username: conneroisu |

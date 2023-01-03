@@ -1,0 +1,16 @@
+{
+	"nodes":[
+		{"id":"7b9f01eedd94768b","x":667,"y":378,"width":400,"height":400,"type":"file","file":"Github/R - Repositories/Vim-Toggle-Obsidian/version-bump.mjs"},
+		{"id":"b8295241733adf27","x":467,"y":-1198,"width":400,"height":400,"type":"file","file":"Github/R - Repositories/Vim-Toggle-Obsidian/Untitled.canvas"},
+		{"id":"96bd41ccdd67fe0a","x":222,"y":378,"width":400,"height":400,"type":"file","file":"Github/R - Repositories/Vim-Toggle-Obsidian/versions.json"},
+		{"id":"8e1f193285da1bf3","x":1112,"y":378,"width":400,"height":400,"type":"file","file":"Github/R - Repositories/Vim-Toggle-Obsidian/styles.css"},
+		{"id":"80c0cf5697ffac08","x":-223,"y":378,"width":400,"height":400,"type":"file","file":"Github/R - Repositories/Vim-Toggle-Obsidian/package-lock.json"},
+		{"id":"c04e8f64c1902fea","x":1112,"y":1756,"width":400,"height":400,"type":"file","file":"Github/R - Repositories/Vim-Toggle-Obsidian/tsconfig.json"},
+		{"id":"361f94fe4ead7b5a","x":1112,"y":851,"width":400,"height":400,"type":"file","file":"Github/R - Repositories/Vim-Toggle-Obsidian/package.json"},
+		{"id":"0f5a27b5509b86a7","x":-223,"y":851,"width":400,"height":400,"type":"file","file":"Github/R - Repositories/Vim-Toggle-Obsidian/esbuild.config.mjs"},
+		{"id":"ef2192d6319af9a9","x":222,"y":851,"width":400,"height":400,"type":"file","file":"Github/R - Repositories/Vim-Toggle-Obsidian/main.ts"},
+		{"id":"04cd089a1acde95e","x":667,"y":851,"width":400,"height":400,"type":"file","file":"Github/R - Repositories/Vim-Toggle-Obsidian/manifest.json"},
+		{"id":"59a24396410c74b5","x":127,"y":-753,"width":1080,"height":1048,"type":"file","file":"Github/R - Repositories/Vim-Toggle-Obsidian/README.md"}
+	],
+	"edges":[]
+}
