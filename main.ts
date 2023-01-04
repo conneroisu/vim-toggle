@@ -1,11 +1,12 @@
-import { Plugin, App, Editor, WorkspaceLeaf, MarkdownView, Modal, Notice, PluginSettingTab, Setting } from 'obsidian';
+import { VimToggleTab } from 'VimToggleTab';
+import { Plugin, Notice } from 'obsidian';
 
 interface VimToggleSettings {
 	notify: boolean;
 }
 
 const DEFAULT_SETTINGS: VimToggleSettings = {
-	notify: false
+	notify: true
 }
 
 export default class VimToggle extends Plugin {
@@ -20,6 +21,9 @@ export default class VimToggle extends Plugin {
 			callback: () => {
 				//@ts-ignore
 				this.app.vault.setConfig("vimMode", !this.app.vault.getConfig("vimMode"));
+				if(this.settings.notify){
+					new Notice("Vim mode toggled to " + !this.app.vault.getConfig("vimMode"), 2000);
+				}
 				//@ts-ignore
 				this.app.workspace.iterateAllLeaves((le) => {
 					if (le.view){
@@ -27,13 +31,16 @@ export default class VimToggle extends Plugin {
 						le.view.editor.cm.setOption("keyMap", this.app.vault.getConfig("vimMode") ? "vim" : "default");
 						//@ts-ignore
 						le.view.editor.cm.refresh();
-						if(this.settings.notify){
-							new Notice("Vim mode toggled", 2000);
-						}
 					}
-				});
+				})
 			}
 		});
+			// This adds a settings tab so the user can configure various aspects of the plugin
+		this.addSettingTab(new VimToggleTab(this.app, this));
+
+		// If the plugin hooks up any global DOM events (on parts of the app that doesn't belong to this plugin)
+		// Using this function will automatically remove the event listener when this plugin is disabled.
+		this.registerInterval(window.setInterval(() => console.log('setInterval'), 5 * 60 * 1000));
 	}
 	
 	onunload() {
@@ -49,30 +56,4 @@ export default class VimToggle extends Plugin {
 	}
 }
 
-class VimToggleTab extends PluginSettingTab {
-	plugin: VimToggle;
 
-	constructor(app: App, plugin: VimToggle) {
-		super(app, plugin);
-		this.plugin = plugin;
-	}
-
-	display(): void {
-		const {containerEl} = this;
-
-		containerEl.empty();
-
-		containerEl.createEl('h2', {text: 'Settings for my awesome plugin.'});
-
-		new Setting(containerEl)
-			.setName('Setting #1')
-			.setDesc('Should a notification be sent when vim mode is actually toggled?')
-			.addToggle(toggle => toggle
-				.setValue(this.plugin.settings.notify)
-				.onChange(async (value) => {
-					console.log('Toggle: ' + value);
-					this.plugin.settings.notify = value;
-					await this.plugin.saveSettings();
-				}));
-	}
-}
