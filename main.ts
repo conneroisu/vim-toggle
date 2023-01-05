@@ -1,4 +1,4 @@
-import { VimToggleTab } from 'VimToggleTab';
+import { VimToggleTab } from 'src/VimToggleTab';
 import { Plugin, Notice } from 'obsidian';
 
 interface VimToggleSettings {
@@ -35,7 +35,7 @@ export default class VimToggle extends Plugin {
 				})
 			}
 		});
-			// This adds a settings tab so the user can configure various aspects of the plugin
+		// This adds a settings tab so the user can configure various aspects of the plugin
 		this.addSettingTab(new VimToggleTab(this.app, this));
 
 		// If the plugin hooks up any global DOM events (on parts of the app that doesn't belong to this plugin)
