@@ -1,5 +1,5 @@
+import { Notice, Plugin } from 'obsidian';
 import { VimToggleTab } from 'src/VimToggleTab';
-import { Plugin, Notice } from 'obsidian';
 
 interface VimToggleSettings {
 	notify: boolean;
