@@ -22,6 +22,7 @@ export default class VimToggle extends Plugin {
 				//@ts-ignore
 				this.app.vault.setConfig("vimMode", !this.app.vault.getConfig("vimMode"));
 				if(this.settings.notify){
+					// @ts-expect-error
 					new Notice("Vim mode toggled to " + !this.app.vault.getConfig("vimMode"), 2000);
 				}
 				//@ts-ignore
