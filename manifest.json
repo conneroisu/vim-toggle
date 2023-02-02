@@ -1,5 +1,5 @@
 {
-	"id": "obsidian-vim-toggle-plugin",
+	"id": "vim-toggle",
 	"name": "Vim Toggle Plugin",
 	"version": "0.1.2",
 	"minAppVersion": "0.15.0",
