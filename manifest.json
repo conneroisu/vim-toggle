@@ -1,11 +1,11 @@
 {
-	"id": "vim-toggle",
+	"id": "obsidian-vim-toggle-plugin",
 	"name": "Vim Toggle Plugin",
-	"version": "0.1.2",
+	"version": "0.1.7",
 	"minAppVersion": "0.15.0",
 	"description": "This is a plugin for obsidian that enables the use of togging vim mode on and off inside of the editor.",
 	"author": "Conner Ohnesorge",
 	"authorUrl": "ttps://conneroisu.github.io/Conner-Ohnesorges-Brain/",
-	"fundingUrl": "https://kofi/connero",
+	"fundingUrl": "https://kofi/conneroisu",
 	"isDesktopOnly": true
 }

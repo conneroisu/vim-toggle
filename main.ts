@@ -19,21 +19,19 @@ export default class VimToggle extends Plugin {
 			id: 'toggle-vim',
 			name: 'Toggle Vim',
 			callback: () => {
+				// Set the vim mode to the opposite of what it was before
+				// if the user has it enabled, disable it, and vice versa
+				// if enabled, disable it
 				//@ts-ignore
-				this.app.vault.setConfig("vimMode", !this.app.vault.getConfig("vimMode"));
-				if(this.settings.notify){
+				if(this.app.vault.getConfig("vimMode")){
 					// @ts-expect-error
-					new Notice("Vim mode toggled to " + !this.app.vault.getConfig("vimMode"), 2000);
+					this.app.vault.setConfig("vimMode", false);
+				}else{ 
+					// @ts-expect-error
+					this.app.vault.setConfig("vimMode", true);
 				}
-				//@ts-ignore
-				this.app.workspace.iterateAllLeaves((le) => {
-					if (le.view){
-						//@ts-ignore
-						le.view.editor.cm.setOption("keyMap", this.app.vault.getConfig("vimMode") ? "vim" : "default");
-						//@ts-ignore
-						le.view.editor.cm.refresh();
-					}
-				})
+				// @ts-expect-error
+				new Notice("Vim mode toggled to " + this.app.vault.getConfig("vimMode"), 2000);
 			}
 		});
 		// This adds a settings tab so the user can configure various aspects of the plugin
