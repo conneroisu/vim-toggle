@@ -2,7 +2,7 @@
 # Vim Toggle Plugin Obsidian
 made with 🤍 by Conner Ohnesorge
 >> Toggle the state of Vim inside of Obsidian, in response to Obsidian Canvas Core Plugin Functionality.
-
+![A gif showing the pure basics of the plugin](docs/legendary.gif)
 Inspired by the great potential within the new Canvas Plugin has prompted me to make a small plugin to toggle the state of use of the vim editor in obsidian.
 # Wondering what vi/vim is?
 
