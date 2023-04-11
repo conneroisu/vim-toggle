@@ -40,7 +40,8 @@ Feel free to donate to my kofi and/or share this project!
 
 kofi: conneroisu
 # Use Case
-Writting inside of obsidian canvas mode can be alittle tedious using vim mode cause of the constant inserting, this plugin allows for the user to evade these difficulties by switching to regular typing from vim mode temporarily.  
+Writting inside of obsidian canvas mode can be alittle tedious using vim mode cause of the constant inserting, this plugin allows for the user to evade these difficulties by switching to regular typing from vim mode temporarily.
+
 # Contributions
 | Conner Ohnesorge |
 | ---------------- |
