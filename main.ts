@@ -11,7 +11,7 @@ import {App, Notice, Plugin, PluginSettingTab, Setting} from "obsidian";
  */
 
 /**
- * This is the interface for the settings of the Vim Toggle plugin.
+ *  Interface for the settings of the Vim Toggle plugin.
  */
 interface VimToggleSettings {
     /**
@@ -20,7 +20,7 @@ interface VimToggleSettings {
     notification: boolean;
     /**
      * Boolean determining if debug messages are shown in the console.
-     */
+     **/
     debug: boolean;
 }
 
@@ -82,22 +82,21 @@ export default class VimToggle extends Plugin {
     }
 
     /**
-     * Unload Method for unloading Vim Toggle.It is called when the
-     * plugin is unloaded.It is responsible for cleaning up any state.
+     * Unload Method for unloading Vim Toggle.Called when the plugin is unloaded.
      **/
     onunload() {
         console.log("unloading plugin: " + this.manifest.name);
     }
 
     /**
-     * Loads the settings of the plugin, it is called in the onload function.
+     * Loads the settings of the plugin, Vim Toggle, it is called in the onload function.
      **/
     async loadSettings() {
         this.settings = Object.assign({}, DEFAULT_SETTINGS, await this.loadData());
     }
 
     /**
-     * Saves the settings of the plugin.
+     * Saves the settings of the Vim Toggle plugin.
      */
     async saveSettings() {
         await this.saveData(this.settings);
@@ -204,9 +203,8 @@ class VimToggleSettingsTab extends PluginSettingTab {
 
 
         /**
-         * Setting for a button that to create a pull request to the Vim Toggle Repo.
-         * Used to allow the user to easily create a pull request to the
-         * repository of the plugin when developing.
+         * Setting for button that to create a pull request to the Vim Toggle Repo.
+         * Allows the user to submit a pull request to the repository of Vim Toggle.
          */
         new Setting(containerEl)
             .setName("Create Pull Request")
@@ -222,7 +220,7 @@ class VimToggleSettingsTab extends PluginSettingTab {
             );
 
         /**
-         * Horizontal rule separating the repository info from the about section.
+         * Horizontal rule separating repository info from the about section.
          */
         containerEl.createEl("hr");
         /**
@@ -230,6 +228,39 @@ class VimToggleSettingsTab extends PluginSettingTab {
          */
         containerEl.createEl("h2", {text: "About Vim Toggle"});
         containerEl.createEl("p", {text: "This plugin was created by Conner Ohnesorge"});
+        /**
+         * Portfolio button for Conner Ohnesorge
+         */
+        new Setting(containerEl)
+            .setName("Portfolio")
+            .setDesc("Go to my portfolio website.")
+            .addButton((button) =>
+                button
+                    .setButtonText("Go to Portfolio")
+                    .setCta()
+                    .onClick(() => {
+                            open("https://conneroisu.github.io");
+                        }
+                    )
+            );
+        /**
+         * Github Profile Button for Conner Ohnesorge
+         */
+        new Setting(containerEl)
+            .setName("GitHub")
+            .setDesc("Go to my GitHub profile.")
+            .addButton((button) =>
+                button
+                    .setButtonText("Go to GitHub")
+                    .setCta()
+                    .onClick(() => {
+                            open("https://github.com/conneroisu");
+                        }
+                    )
+            );
+        /**
+         * Kofi button for Conner Ohnesorge
+         */
         new Setting(containerEl)
             .setName("Kofi")
             .setDesc("Buy me a coffee!")
