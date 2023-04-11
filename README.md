@@ -44,6 +44,6 @@ Writting inside of obsidian canvas mode can be alittle tedious using vim mode ca
 # Contributions
 | Conner Ohnesorge |
 | ---------------- |
-|                  |
+| ![conner.jpeg](docs%2Fconner.jpeg)          |
 | github username: conneroisu |
 | email: conneroisu@outlook.com                            |
