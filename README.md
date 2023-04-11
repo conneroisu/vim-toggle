@@ -1,4 +1,4 @@
-[![Build obsidian plugin](https://github.com/conneroisu/Vim-Toggle-Obsidian/actions/workflows/main.yml/badge.svg)](https://github.com/conneroisu/Vim-Toggle-Obsidian/actions/workflows/main.yml)
+[![Build obsidian plugin](https://github.com/conneroisu/vim-toggle/actions/workflows/main.yml/badge.svg)](https://github.com/conneroisu/vim-toggle/actions/workflows/main.yml)
 # Vim Toggle Plugin Obsidian
 made with 🤍 by Conner Ohnesorge
 >> Toggle the state of Vim inside of Obsidian, in response to Obsidian Canvas Core Plugin Functionality.
