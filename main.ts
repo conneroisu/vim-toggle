@@ -244,21 +244,6 @@ class VimToggleSettingsTab extends PluginSettingTab {
                     )
             );
         /**
-         * Github Profile Button for Conner Ohnesorge
-         */
-        new Setting(containerEl)
-            .setName("GitHub")
-            .setDesc("Go to my GitHub profile.")
-            .addButton((button) =>
-                button
-                    .setButtonText("Go to GitHub")
-                    .setCta()
-                    .onClick(() => {
-                            open("https://github.com/conneroisu");
-                        }
-                    )
-            );
-        /**
          * Kofi button for Conner Ohnesorge
          */
         new Setting(containerEl)
