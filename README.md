@@ -25,7 +25,8 @@ To access the plugin settings, click on the settings cog in the top right corner
 
 ## Basic Usage
 Once installed, you can toggle vim mode on and off with a command. You can configure this command to a hotkey of your choice in the settings. You can also turn off or on notifications for when vim mode is turned on or off. 
-### Normal installation(NOT YET ACCEPTED)
+
+### Normal installation
 To install this plugin normally, you can navigate within the obsidian app to the community plugins to view and install this plugin without even exiting the app! Hopefully you can find some use for it yourself! (You will be able to do this soon).
 
 ### Manual Installation
