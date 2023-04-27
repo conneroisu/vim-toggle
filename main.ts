@@ -239,7 +239,7 @@ class VimToggleSettingsTab extends PluginSettingTab {
                     .setButtonText("Go to Portfolio")
                     .setCta()
                     .onClick(() => {
-                            open("https://conneroisu.github.io");
+                            open("https://connerrohnesorrge.mixa.site");
                         }
                     )
             );
