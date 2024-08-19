@@ -82,39 +82,43 @@ export default class VimToggle extends Plugin {
 		});
 	}
 
+	/**
+	 * Toggles the state of vim mode in the current instance of obsidian.
+	 **/
 	toggleVimMode() {
 		if (this.getVimMode()) {
 			this.turnOffVimMode();
 		} else {
 			this.turnOnVimMode();
 		}
-
 		if (this.settings.notification) {
 			new Notice(
 				"Vim mode toggled to " +
-				// @ts-expect-error
-				this.app.vault.getConfig("vimMode"),
+				this.getVimMode(),
 				2000
 			);
 		}
 	}
 
-	/*
+	/**
 	 * Turns off vim mode in the current instance of obsidian.
-	 */
+	 **/
 	turnOffVimMode() {
 		// @ts-expect-error
 		this.app.vault.setConfig("vimMode", false);
 	}
 
-	/*
+	/**
 	 * Turns on vim mode in the current instance of obsidian.
-	 */
+	 **/
 	turnOnVimMode() {
 		// @ts-expect-error
 		this.app.vault.setConfig("vimMode", true);
 	}
 
+	/**
+	 * Returns the current state of vim mode in the current instance of obsidian.
+	 **/
 	getVimMode() {
 		// @ts-expect-error
 		return this.app.vault.getConfig("vimMode");
