@@ -77,7 +77,7 @@ export default class VimToggle extends Plugin {
 			},
 		});
 		this.addSettingTab(new VimToggleSettingsTab(this.app, this));
-		
+
 		this.addRibbonIcon("text-cursor-input", "Toggle Vim Mode", () => {
 			this.toggleVimMode();
 		});
@@ -288,8 +288,7 @@ class VimToggleSettingsTab extends PluginSettingTab {
 					.setCta()
 					.onClick(() => {
 						open("https://conneroh.com");
-					}
-					)
+					})
 			);
 		/**
 		 * Kofi button for Conner Ohnesorge
