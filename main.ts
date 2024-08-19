@@ -229,8 +229,7 @@ class VimToggleSettingsTab extends PluginSettingTab {
 					.setCta()
 					.onClick(() => {
 						open("https://github.com/conneroisu/vim-toggle-obsidian");
-					}
-					)
+					})
 			);
 
 		/**
@@ -245,8 +244,7 @@ class VimToggleSettingsTab extends PluginSettingTab {
 					.setCta()
 					.onClick(() => {
 						open("https://github.com/conneroisu/vim-toggle-obsidian/issues/new");
-					}
-					)
+					})
 			);
 
 
@@ -263,8 +261,7 @@ class VimToggleSettingsTab extends PluginSettingTab {
 					.setCta()
 					.onClick(() => {
 						open("https://github.com/conneroisu/vim-toggle-obsidian/compare");
-					}
-					)
+					})
 			);
 
 		/**
@@ -302,8 +299,7 @@ class VimToggleSettingsTab extends PluginSettingTab {
 					.setCta()
 					.onClick(() => {
 						open("https://ko-fi.com/conneroisu");
-					}
-					)
+					})
 			);
 	}
 }
