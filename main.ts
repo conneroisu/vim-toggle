@@ -30,12 +30,12 @@ interface VimToggleSettings {
 const DEFAULT_SETTINGS: VimToggleSettings = {
 	/**
 	 * Default value for the notification setting, detailing the
-	 * condition for sending a notification.(By default, it is set to true).
+	 * condition for sending a notification. (By default, it is set to true).
 	 */
 	notification: true,
 	/**
 	 * Default value for the debug setting, detailing the condition
-	 * for sending debug messages(By default, it is set to false).
+	 * for sending debug messages (By default, it is set to false).
 	 */
 	debug: false,
 };
@@ -77,6 +77,7 @@ export default class VimToggle extends Plugin {
 			},
 		});
 		this.addSettingTab(new VimToggleSettingsTab(this.app, this));
+		
 		this.addRibbonIcon("text-cursor-input", "Toggle Vim Mode", () => {
 			this.toggleVimMode();
 		});
@@ -286,7 +287,7 @@ class VimToggleSettingsTab extends PluginSettingTab {
 					.setButtonText("Go to Portfolio")
 					.setCta()
 					.onClick(() => {
-						open("https://connerrohnesorrge.mixa.site");
+						open("https://conneroh.com");
 					}
 					)
 			);
