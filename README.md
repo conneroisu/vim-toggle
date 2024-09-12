@@ -55,3 +55,8 @@ Writting inside of obsidian canvas mode can be alittle tedious using vim mode ca
 | ---------------- |
 | github username: [andrewbaxter439](https://github.com/andrewbaxter439) |
 | email: NA |
+
+| Matthew Turk |
+| ---------------- |
+| github username: [matthewturk](https://github.com/matthewturk) |
+| email: matthewturk@gmail.com |
