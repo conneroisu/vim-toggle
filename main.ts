@@ -22,6 +22,11 @@ interface VimToggleSettings {
 	 * Boolean determining if debug messages are shown in the console.
 	 **/
 	debug: boolean;
+
+	/**
+	 * Boolean determining if Canvas files should have vim mode off by default
+	 */
+	canvasVim: boolean;
 }
 
 /**
@@ -38,6 +43,12 @@ const DEFAULT_SETTINGS: VimToggleSettings = {
 	 * for sending debug messages (By default, it is set to false).
 	 */
 	debug: false,
+
+	/**
+	 * Default value for the canvasVim setting, detailing the condition
+	 * for setting vim mode off by default for canvas files (By default, it is set to false).
+	 */
+	canvasVim: false,
 };
 
 /**
@@ -81,6 +92,18 @@ export default class VimToggle extends Plugin {
 		this.addRibbonIcon("text-cursor-input", "Toggle Vim Mode", () => {
 			this.toggleVimMode();
 		});
+
+		this.registerEvent(
+			this.app.workspace.on("file-open", (file) => {
+				if(!file || !this.settings.canvasVim) return;
+				if(file.extension == "canvas") {
+					this.turnOffVimMode();
+				}
+				else {
+					this.turnOnVimMode();
+				}
+			}
+		));
 	}
 
 	/**
@@ -208,6 +231,26 @@ class VimToggleSettingsTab extends PluginSettingTab {
 						await this.plugin.saveSettings();
 					})
 			);
+
+
+		/**
+		 * This is the canvas-always-off setting for Vim Toggle plugin.
+		 */
+		new Setting(containerEl)
+			.setName("Canvas Off")
+			.setDesc(
+				"When switching to a Canvas, turn vim off, and when not in Canvas, turn vim on."
+			)
+			.addToggle((toggle: ToggleComponent) =>
+				toggle
+					.setValue(this.plugin.settings.canvasVim)
+					.onChange(async (value) => {
+						this.plugin.settings.canvasVim = value;
+						await this.plugin.saveSettings();
+					})
+			);
+
+
 
 
 		/**
