@@ -1,6 +1,6 @@
 {
   "name": "vim-toggle",
-  "version": "1.0.6",
+  "version": "1.0.8",
   "description": "A plugin for Obsidian that allows you to toggle VimMode on and off.",
   "main": "main.js",
   "scripts": {
