@@ -153,7 +153,7 @@ export default class VimToggle extends Plugin {
 	 **/
 	getVimMode() {
 		// @ts-expect-error
-		return this.isVimEnabled();
+		return this.app.isVimEnabled();
 	}
 
 	/**
