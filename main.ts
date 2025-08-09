@@ -131,6 +131,7 @@ export default class VimToggle extends Plugin {
 		// @ts-expect-error
 		if (this.app.isMobile) {
 			localStorage.removeItem("vim");
+			this.app.workspace.updateOptions();
 		} else {
 			this.app.vault.setConfig("vimMode", false);
 		}
@@ -143,6 +144,7 @@ export default class VimToggle extends Plugin {
 		// @ts-expect-error
 		if (this.app.isMobile) {
 			localStorage.setItem("vim", "true");
+			this.app.workspace.updateOptions();
 		} else {
 			this.app.vault.setConfig("vimMode", true);
 		}
