@@ -95,15 +95,15 @@ export default class VimToggle extends Plugin {
 
 		this.registerEvent(
 			this.app.workspace.on("file-open", (file) => {
-				if(!file || !this.settings.canvasVim) return;
-				if(file.extension == "canvas") {
+				if (!file || !this.settings.canvasVim) return;
+				if (file.extension == "canvas") {
 					this.turnOffVimMode();
 				}
 				else {
 					this.turnOnVimMode();
 				}
 			}
-		));
+			));
 	}
 
 	/**
@@ -129,7 +129,13 @@ export default class VimToggle extends Plugin {
 	 **/
 	turnOffVimMode() {
 		// @ts-expect-error
-		this.app.vault.setConfig("vimMode", false);
+		if (this.app.isMobile) {
+			localStorage.removeItem("vim");
+			this.app.workspace.updateOptions();
+		} else {
+			// @ts-expect-error
+			this.app.vault.setConfig("vimMode", false);
+		}
 	}
 
 	/**
@@ -137,7 +143,13 @@ export default class VimToggle extends Plugin {
 	 **/
 	turnOnVimMode() {
 		// @ts-expect-error
-		this.app.vault.setConfig("vimMode", true);
+		if (this.app.isMobile) {
+			localStorage.setItem("vim", "true");
+			this.app.workspace.updateOptions();
+		} else {
+			// @ts-expect-error
+			this.app.vault.setConfig("vimMode", true);
+		}
 	}
 
 	/**
@@ -145,7 +157,7 @@ export default class VimToggle extends Plugin {
 	 **/
 	getVimMode() {
 		// @ts-expect-error
-		return this.app.vault.getConfig("vimMode");
+		return this.app.isVimEnabled();
 	}
 
 	/**
