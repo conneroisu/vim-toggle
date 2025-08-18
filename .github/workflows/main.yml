@@ -15,16 +15,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: "14.x" # You might need to adjust this value to your own version
+      - uses: oven-sh/setup-bun@v2
       - name: Build
         id: build
         run: |
-          yarn
-          yarn add fs
-          yarn run build --if-present
+          bun run build
           mkdir ${{ env.PLUGIN_NAME }}
           cp main.js manifest.json ${{ env.PLUGIN_NAME }}
           zip -r ${{ env.PLUGIN_NAME }}.zip ${{ env.PLUGIN_NAME }}
